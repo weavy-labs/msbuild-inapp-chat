@@ -1,7 +1,9 @@
+// fetch token for logged in user from backend
 var getToken = function () {
     return fetch('/token').then(response => response.text());
 };
 
+// instantiate weavy
 var weavy = window.weavy = new Weavy({
     url: "https://jojje.weavy.io",
     jwt: getToken,
@@ -10,28 +12,27 @@ var weavy = window.weavy = new Weavy({
     ],
 });
 
+// create app
 var messenger = weavy.app({
     id: "my-messenger",
     type: "messenger",
     container: "#drawer",
     open: false,
     badge: true,
-    //css: ".conversation .list-group-item { background: red; }",
-    stylesheet: [
-        //"/css/weavy-messenger.css",
-        //"/css/weavy-dark.css",
-    ],
     className: "messenger-x"
 })
 
-//messenger.addStyles("#my-messenger .conversation .list-group-item { color: white; }");
-
+// toggle messenger
 document.getElementById("messenger").addEventListener("click", () => messenger.toggle());
 
+// handle markup changes
 messenger.on("app-open", () => document.getElementById("drawer").classList.add("open"))
 messenger.on("app-close", () => document.getElementById("drawer").classList.remove("open"));
+
+// responds to the badge event
 messenger.on("badge", (e, badge) => { setBadge("#messenger", badge.count) });
 
+// displays the badge
 function setBadge(selector, count) {
     var badge = document.querySelector(selector + " .badge");
     if (typeof count === 'number') {

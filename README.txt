@@ -5,9 +5,9 @@ Hello Greta from Skövde! This readme will help you add Weavy to your existing W
 
 DemoHostComplete is the "completed" project. The instructions below will need to be carried out to add Weavy to the DemoHost project.
 
-############################################################################################################################################################################
+###########################################################################################################################
 # 1. Run site without Weavy.
-############################################################################################################################################################################
+###########################################################################################################################
 
 - "Open Folder..." "\msbuilddemo\DemoHost" in VS Code.
 - In VS Code "Terminal" -> "New Terminal"
@@ -20,9 +20,9 @@ DemoHostComplete is the "completed" project. The instructions below will need to
 Cookie authentication is enabled on the site, but you can login as anyone with any password. Each different login will create a new user in Weavy when the dropin is loaded.
 
 
-############################################################################################################################################################################
+###########################################################################################################################
 # 2. Add Weavy
-############################################################################################################################################################################
+###########################################################################################################################
 
 You can take a look or diff the files from the DemoHostComplete project to see the differences. You can add the parts in any order.
 
@@ -85,9 +85,9 @@ Load the Weavy client
 
 Copy the contents of "\msbuilddemo\DemoHostComplete\wwwroot\js\script.js" -> "\msbuilddemo\DemoHost\wwwroot\js\script.js"
 
-############################################################################################################################################################################
-# 3. Test
-############################################################################################################################################################################
+###########################################################################################################################
+# 3. Run site with Weavy added
+###########################################################################################################################
 
 - Navigate to \DemoHost in the terminal in VS Code
 - Enter "dotnet run"
@@ -96,4 +96,4 @@ Copy the contents of "\msbuilddemo\DemoHostComplete\wwwroot\js\script.js" -> "\m
 - To stop the site, enter CTRL+C in the terminal.
 
 
-
+THAT SHOULD BE IT...

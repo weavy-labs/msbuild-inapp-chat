@@ -1,3 +1,7 @@
+import Weavy from '@weavy/dropin-js';
+
+//Weavy.defaults.logging = { debug: true };
+
 var getToken = function () {
     return fetch('/token').then(response => response.text());
 };

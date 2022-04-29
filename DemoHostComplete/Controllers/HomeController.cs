@@ -13,7 +13,6 @@ namespace TestHost.Controllers;
 [Authorize]
 [Route("")]
 public class HomeController : Controller {
-    
     private readonly IConfiguration _config;
     private readonly ILogger<HomeController> _logger;
 
@@ -22,19 +21,23 @@ public class HomeController : Controller {
         _logger = logger;
     }
 
-    /// <summary>
-    /// Displays the index page.
-    /// </summary>
-    /// <returns></returns>
     [HttpGet("")]
     public IActionResult Index() {
         return View();
     }
 
-    /// <summary>
-    /// Displays the login page.
-    /// </summary>
-    /// <returns></returns>
+    [HttpGet("token")]
+    public IActionResult GetToken() {
+        var payload = new Dictionary<string, object>(){
+            { "iss", _config["ClientId"] },
+            { "sub", User.Identity.Name},
+            { "username", User.Identity.Name},
+            { "exp", DateTimeOffset.UtcNow.AddMinutes(5).ToUnixTimeSeconds()}
+        };
+        var token = Jose.JWT.Encode(payload, Encoding.UTF8.GetBytes(_config["ClientSecret"]), JwsAlgorithm.HS256);
+        return Content(token);
+    }
+
     [AllowAnonymous]
     [HttpGet("login")]
     public IActionResult Login() {
@@ -42,39 +45,31 @@ public class HomeController : Controller {
         return View(model);
     }
 
-    /// <summary>
-    /// Signs in the user and sets auth cookie.
-    /// </summary>
-    /// <param name="model"></param>
-    /// <returns></returns>
     [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginModel model) {
 
         if (ModelState.IsValid) {
+
             var claims = new List<Claim> { new Claim("username", model.Username) };
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme, "username", "role");
+
             var user = new ClaimsPrincipal(identity);
+
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, user);
+
             return RedirectToAction(nameof(Index));
         }
+
         return View(model);
     }
 
-    /// <summary>
-    /// Logs out the user.
-    /// </summary>
-    /// <returns></returns>
     [HttpGet("logout")]
     public async Task<IActionResult> Logout() {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return RedirectToAction(nameof(Index));
     }
 
-    /// <summary>
-    /// Handles errors.
-    /// </summary>
-    /// <returns></returns>
     [AllowAnonymous]
     [Route("error")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

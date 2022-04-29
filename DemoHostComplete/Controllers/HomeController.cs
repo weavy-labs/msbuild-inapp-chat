@@ -26,18 +26,6 @@ public class HomeController : Controller {
         return View();
     }
 
-    [HttpGet("token")]
-    public IActionResult GetToken() {
-        var payload = new Dictionary<string, object>(){
-            { "iss", _config["ClientId"] },
-            { "sub", User.Identity.Name},
-            { "username", User.Identity.Name},
-            { "exp", DateTimeOffset.UtcNow.AddMinutes(5).ToUnixTimeSeconds()}
-        };
-        var token = Jose.JWT.Encode(payload, Encoding.UTF8.GetBytes(_config["ClientSecret"]), JwsAlgorithm.HS256);
-        return Content(token);
-    }
-
     [AllowAnonymous]
     [HttpGet("login")]
     public IActionResult Login() {

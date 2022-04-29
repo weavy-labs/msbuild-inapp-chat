@@ -1,0 +1,24 @@
+# system files
+*~
+.DS_Store
+[Dd]esktop.ini
+$RECYCLE.BIN/
+Thumbs.db
+
+# user-specific files
+*.suo
+*.user
+*.userprefs
+.idea/
+.vs/
+
+# build output
+bin/
+obj/
+dist/
+
+# dependencies
+node_modules/
+packages/
+!packages/*/build/
+

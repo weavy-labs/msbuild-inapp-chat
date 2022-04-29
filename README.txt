@@ -1,5 +1,8 @@
 INSTRUCTIONS
 ------------
+Hello Greta from Skövde! This readme will help you add Weavy to your existing Web Application!
+
+
 DemoHostComplete is the "completed" project. The instructions below will need to be carried out to add Weavy to the DemoHost project.
 
 ############################################################################################################################################################################
@@ -33,6 +36,8 @@ Add identity provider for Weavy
   "ClientId": "get.weavy.io",
   "ClientSecret": "RJ8gYBFgUqrfoDGfVnbB7G9NqjFCod7d"
 }
+
+(THESE ARE LIVE KEYS. JUST SO YOU KNOW...)
 
 - The client secret is for the Weavy instance https://rickardstelefon.weavy.io/ for now.
 

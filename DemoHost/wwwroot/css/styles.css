@@ -36,13 +36,13 @@ body {
   fill: currentColor;
 }
 
-.drawer {
+#messenger-container {
   position: fixed;
   top: 3.5rem;
   bottom: 0;
   z-index: 1039;
   transition: transform, opacity;
-  transition-duration: 0.2s;
+  transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   right: 0;
   width: 20rem;
@@ -52,19 +52,19 @@ body {
   box-shadow: -1px 0 2px rgba(204, 204, 204, 0);
 }
 
-.drawer.open {
+#messenger-container.open {
   transform: none;
   box-shadow: -1px 0 2px rgba(204, 204, 204, 1);
 }
 
 @media (max-width: 768px) {
-  .drawer {
+  #messenger-container {
     width: 100%;
     transform: translateX(100%);
   }
 }
 
-#messenger .badge {
+#messenger-button .badge {
   position: absolute;
   right: 1rem;
   top: .5rem;

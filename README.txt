@@ -36,7 +36,7 @@ Instructions on how to get in-app chat up and running in your .NET app using the
 
 // instantiate weavy
 var weavy = window.weavy = new Weavy({
-    url: "{ YOUR SANDBOX URL }",
+    url: "https://{ YOUR SANDBOX URL }",
     jwt: getToken
 });
 

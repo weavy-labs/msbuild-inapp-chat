@@ -6,7 +6,7 @@ var getToken = function () {
 
 // instantiate weavy
 var weavy = window.weavy = new Weavy({
-    url: "https://hansson.weavy.io",
+    url: "{ YOUR SANDBOX URL }",
     jwt: getToken
 });
 

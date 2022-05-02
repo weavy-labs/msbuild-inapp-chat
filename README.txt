@@ -7,6 +7,7 @@ Instructions on how to get in-app chat up and running in your .NET app using the
 ###########################################################################################################################
 
 - Go to https://www.weavy.com/signup to set up your account and provision the sandbox
+- When sandbox is provisioned, you'll find all the details you need under the "Account" tab in the top navbar
 
 ###########################################################################################################################
 # 2. Install the dropin-js
@@ -23,7 +24,7 @@ Instructions on how to get in-app chat up and running in your .NET app using the
 ###########################################################################################################################
 
 - Open \DemoHost\appsettings.json
-- Update with your secret below and save:
+- Update with your secret below and save (you'll find secret under the "Account" tab):
 
 {
   "ClientId": "get.weavy.io",
@@ -31,7 +32,7 @@ Instructions on how to get in-app chat up and running in your .NET app using the
 }
 
 - Open \DemoHost\wwwroot\js\script.js
-- Update with your URL below and save:
+- Update with your URL below and save (you'll find URL under the "Account" tab):
 
 // instantiate weavy
 var weavy = window.weavy = new Weavy({

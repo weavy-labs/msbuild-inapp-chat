@@ -40,7 +40,7 @@ body {
   position: fixed;
   top: 3.5rem;
   bottom: 0;
-  z-index: 1039;
+  z-index: 100;
   transition: transform, opacity;
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -63,11 +63,14 @@ body {
     transform: translateX(100%);
   }
 }
+#messenger-button {
+  position:relative;
+}
 
 #messenger-button .badge {
   position: absolute;
-  right: 1rem;
-  top: .5rem;
+  right: 0;
+  top: 0;
   border-radius: 1rem;
   padding: .25rem;
   min-width: 1rem;

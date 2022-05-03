@@ -23,7 +23,7 @@ Instructions on how to get in-app chat up and running in your .NET app using the
 # 3. Add credentials for your sandbox
 ###########################################################################################################################
 
-- Open \DemoHost\appsettings.json
+- Create the file \DemoHost\appsettings.json
 - Update with your secret below and save (you'll find secret under the "Account" tab):
 
 {
@@ -48,7 +48,7 @@ var weavy = window.weavy = new Weavy({
 - Enter "dotnet run"
 - Open a browser and navigate to the URL indicated by the logs in the terminal. E.g. https://localhost:7059 (use the HTTPS one!)
 - Sign in and see the Weavy in action
-    - Predfined users (password doesn't matter, it's a simple cookie login) includes;
+    - Predfined users (password doesn't matter, it's a dumbed down login for demo purposes) includes;
        - rickard (belongs to Directory A)
        - nina (belongs to Directory A)
        - lydia (belongs to Directory A)

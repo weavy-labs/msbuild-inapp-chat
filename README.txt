@@ -23,7 +23,7 @@ Instructions on how to get in-app chat up and running in your .NET app using the
 # 3. Add credentials for your sandbox
 ###########################################################################################################################
 
-- Create the file \DemoHost\appsettings.json
+- Open \DemoHost\appsettings.json
 - Update with your secret below and save (you'll find secret under the "Account" tab):
 
 {

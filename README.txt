@@ -24,10 +24,10 @@ Instructions on how to get in-app chat up and running in your .NET app using the
 ###########################################################################################################################
 
 - Open \DemoHost\appsettings.json
-- Update with your secret below and save (you'll find secret under the "Account" tab):
+- Update with your ClientID and Secret below and save;
 
 {
-  "ClientId": "get.weavy.io",
+  "ClientId": "{ YOUR CLIENT ID }",
   "ClientSecret": "{ YOUR SECRET FROM THE SANDBOX }"
 }
 
@@ -36,7 +36,7 @@ Instructions on how to get in-app chat up and running in your .NET app using the
 
 // instantiate weavy
 var weavy = window.weavy = new Weavy({
-    url: "https://{ YOUR SANDBOX URL }",
+    url: "https://{ YOUR WEAVY URL }",
     jwt: getToken
 });
 

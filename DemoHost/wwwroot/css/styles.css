@@ -45,8 +45,8 @@ body {
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   right: 0;
-  width: 20rem;
-  transform: translateX(20rem);
+  width: 25rem;
+  transform: translateX(25rem);
   pointer-events: none;
   background-color: white;
   box-shadow: -1px 0 2px rgba(204, 204, 204, 0);
